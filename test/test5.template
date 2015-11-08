@@ -1,0 +1,3 @@
+{{#repoa}}<b>{{name}}</b>{{/repoa}}{{^repoa}}No repoa{{/repoa}}
+{{#repob}}<b>{{name}}</b>{{/repob}}{{^repob}}No repob{{/repob}}
+{{#repoc}}<b>{{name}}</b>{{/repoc}}{{^repoc}}No repoc{{/repoc}}
