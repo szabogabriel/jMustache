@@ -18,11 +18,7 @@ public class Template implements TemplateHolder {
 	private RootContent rootContent;
 	
 	public Template(File folder, String templateName) {
-		UPDATE = true;
-		ROOT = folder;
-		TEMPLATE = createTemplateFileFromName(templateName);
-		TEMPLATE_CONTENT = null;
-		updateTemplate();
+		this(folder, templateName, true);
 	}
 	
 	public Template(File folder, String templateName, Boolean updateTemplate) {
