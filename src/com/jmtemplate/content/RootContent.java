@@ -1,0 +1,26 @@
+package com.jmtemplate.content;
+
+import java.util.List;
+import java.util.Map;
+
+import com.jmtemplate.TemplateHolder;
+
+public class RootContent extends Content {
+	
+	private final List<Content> CONTENTS;
+	
+	public RootContent(String content, TemplateHolder templateHolder) {
+		super(templateHolder);
+		this.CONTENTS = compile(content);
+	}
+	
+	@Override
+	public String generateContent(Map<String, Object> values) {
+		StringBuilder sb = new StringBuilder();
+		for (Content it : CONTENTS) {
+			sb.append(it.generateContent(values));
+		}
+		return sb.toString();
+	}
+
+}
