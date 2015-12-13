@@ -9,6 +9,7 @@
 	</target>
 
 	<target name="compile">
+		<mkdir dir="${dir.bin}" />
 		<javac 
 			destdir="${dir.bin}" >
 			<src path="${dir.src}" />
