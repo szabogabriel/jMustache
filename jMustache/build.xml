@@ -1,29 +1,9 @@
-<project name="jmustache" basedir="." default="all">
-
-	<property file="build.properties" />
-
-	<target name="all" depends="clean,compile,package" />
+<project name="jMustache" basedir="." default="start">
 	
-	<target name="clean">
-		<delete file="${file.jar}" />
-	</target>
-
-	<target name="compile">
-		<mkdir dir="${dir.bin}" />
-		<javac 
-			destdir="${dir.bin}" >
-			<src path="${dir.src}" />
-		</javac>
-	</target>
-
-	<target name="package">
-		<jar 
-			destfile="${file.jar}" >
-			<fileset dir="${dir.bin}" />
-			<manifest>
-				<attribute name="Implementation-Version" value="${project.version}"/>
-			</manifest>
-		</jar>
+	<import file="../jMustacheBuild/build_generic.xml" />
+	
+	<target name="start">
+		<ant antfile="../jMustacheBuild/dependencies.xml" target="jMustache" inheritall="false"/>
 	</target>
 	
 </project>
