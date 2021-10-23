@@ -16,4 +16,4 @@ objects implementing once again the Map interface.
 
 ## Performance
 
-It renders the timeline.mustache (which is an example taken from https://github.com/spullara/mustache.java) around 145.000 times (which is about 29x faster, than the other implementation).
+It renders the timeline.mustache (which is an example taken from https://github.com/spullara/mustache.java) around 145.000 times per second (which is about 29x faster, than the other implementation).
