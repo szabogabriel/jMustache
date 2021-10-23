@@ -1,14 +1,14 @@
 package com.jmtemplate.test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.jmtemplate.Template;
 import com.jmtemplate.TemplateCallback;
@@ -31,7 +31,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered: \n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
 	@Test
@@ -49,7 +49,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered: \n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered: \n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
 	@Test
@@ -98,7 +98,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered: \n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
 	@Test
@@ -119,7 +119,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered: \n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
 	@Test
@@ -138,7 +138,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered:\n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
 	@Test
@@ -154,7 +154,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered:\n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
 	@Test
@@ -176,36 +176,35 @@ public class AcceptanceTest {
 		System.out.println("Rendered:\n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 	
-	@Test
-	public void testWeb() {
-		System.out.println("Test: web");
-		final Map<String, Object> map = new HashMap<>();
-		final Map<String, Object> map1 = new HashMap<>();
-		final List<Map<String, Object>> list = new ArrayList<>();
-		map1.put("name", "theName");
-		list.add(map1);
-		map.put("names", list);
-		
-		final String toAchieve = "<h2>Names</h2>\n<strong>theName</strong>";
-		
-		try {
-			URL url = new URL("http://localhost/test");
-			
-			final Template t = new Template(url, "test7a.template");
-			final String rendered = t.render(map);
-			
-			System.out.println("To achieve:\n" + toAchieve);
-			System.out.println("Rendered:\n" + rendered);
-			System.out.println("-------------------\n");
-			
-			Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	public void testWeb() {
+//		System.out.println("Test: web");
+//		final Map<String, Object> map = new HashMap<>();
+//		final Map<String, Object> map1 = new HashMap<>();
+//		final List<Map<String, Object>> list = new ArrayList<>();
+//		map1.put("name", "theName");
+//		list.add(map1);
+//		map.put("names", list);
+//		
+//		final String toAchieve = "<h2>Names</h2>\n<strong>theName</strong>";
+//		
+//		try {
+//			URL url = new URL("http://localhost/test");
+//			
+//			final Template t = new Template(url, "test7a.template");
+//			final String rendered = t.render(map);
+//			
+//			System.out.println("To achieve:\n" + toAchieve);
+//			System.out.println("Rendered:\n" + rendered);
+//			System.out.println("-------------------\n");
+//			
+//			assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
 	@Test
 	public void testLambda() {
@@ -232,7 +231,7 @@ public class AcceptanceTest {
 		System.out.println("Rendered:\n" + rendered);
 		System.out.println("-------------------\n");
 		
-		Assert.assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
+		assertArrayEquals(toAchieve.toCharArray(), rendered.toCharArray());
 	}
 
 }

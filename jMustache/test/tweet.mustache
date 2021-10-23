@@ -1,0 +1,14 @@
+<div>
+{{#user}}
+    <div><a href="https://twitter.com/{{screen_name}}">{{name}}</a> tweeted:</div>
+    <div><img src="{{profile_image_url_https}}"></div>
+{{#entities}}
+{{>entities.mustache}}
+{{/entities}}
+{{/user}}
+    <div>{{text}}</div>
+{{#entities}}
+{{>entities.mustache}}
+{{/entities}}
+    <div>{{{source}}}</div>
+</div>
