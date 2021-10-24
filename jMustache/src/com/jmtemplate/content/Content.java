@@ -69,11 +69,33 @@ public abstract class Content {
 			rewrite = false;
 			i++;
 		}
-		String value = content.charAt(i++) + "";
-		while (content.charAt(i) != '}') 
-			value += content.charAt(i++);
-		i += 2 + (rewrite ? 0 : 1);
-		return new DynamicValueContent(value, rewrite, TEMPLATE_HOLDER);
+		String content = readUntilFinishedIgnoreEmbeddedContent(rewrite);
+		if (containsEmbeddedElements(content)) {
+			return new RecoursiveDynamicValueContent(content, rewrite, TEMPLATE_HOLDER);
+		} else {
+			return new DynamicValueContent(content, rewrite, TEMPLATE_HOLDER);
+		}
+	}
+	
+	private boolean containsEmbeddedElements(String content) {
+		return content.contains("{{") && content.contains("}}");
+	}
+	
+	private String readUntilFinishedIgnoreEmbeddedContent(boolean rewrite) {
+		int amountOfClosedBrackets = (rewrite) ? -2 : -3;
+		int bracketCount = 0;
+		StringBuilder sb = new StringBuilder();
+		while (bracketCount != amountOfClosedBrackets) {
+			if (content.charAt(i) == '{') {
+				bracketCount++;
+			} else
+			if (content.charAt(i) == '}') {
+				bracketCount--;
+			}
+			sb.append(content.charAt(i++));
+		}
+		String ret = sb.toString();
+		return ret.substring(0, ret.length() + amountOfClosedBrackets);
 	}
 	
 	private Content handleNegation() {
