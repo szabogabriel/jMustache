@@ -1,2 +1,2 @@
-* {{name.{{locale}}}}
-* {{age.{{locale}}}}
+* {{_{{locale}}.name.{{postfix}}}}
+* {{_{{locale}}.age.{{postfix}}}}
