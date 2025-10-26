@@ -8,46 +8,46 @@ The data provided to the template is an object implementing the Map interface. F
 
 ## Installation
 
-### Using Maven
+### Using Maven (via JitPack)
 
-Add the following to your `pom.xml`:
+Add the JitPack repository to your `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Then add the dependency:
 
 ```xml
 <dependency>
     <groupId>com.github.szabogabriel</groupId>
     <artifactId>jMustache</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>v0.1.0</version>
 </dependency>
 ```
 
-You'll also need to add the GitHub Packages repository:
+**Note:** Replace `v0.1.0` with the latest release version from [Releases](https://github.com/szabogabriel/jMustache/releases).
 
-```xml
-<repositories>
-    <repository>
-        <id>github</id>
-        <url>https://maven.pkg.github.com/szabogabriel/jMustache</url>
-    </repository>
-</repositories>
+### Using Gradle
+
+```gradle
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.szabogabriel:jMustache:v0.1.0'
+}
 ```
 
-### Authentication
+### Download JAR Directly
 
-To use GitHub Packages, you need to authenticate. Create or edit your `~/.m2/settings.xml`:
-
-```xml
-<settings>
-    <servers>
-        <server>
-            <id>github</id>
-            <username>YOUR_GITHUB_USERNAME</username>
-            <password>YOUR_GITHUB_TOKEN</password>
-        </server>
-    </servers>
-</settings>
-```
-
-Replace `YOUR_GITHUB_USERNAME` with your GitHub username and `YOUR_GITHUB_TOKEN` with a [GitHub Personal Access Token](https://github.com/settings/tokens) with `read:packages` permission.
+You can also download the JAR file directly from the [Releases page](https://github.com/szabogabriel/jMustache/releases).
 
 ## Functionality
 
