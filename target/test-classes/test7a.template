@@ -1,2 +1,0 @@
-<h2>Names</h2>
-{{#names}}{{>test7b.template}}{{/names}}

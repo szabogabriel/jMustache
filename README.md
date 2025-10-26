@@ -8,46 +8,23 @@ The data provided to the template is an object implementing the Map interface. F
 
 ## Installation
 
-### Using Maven (via JitPack)
+### Using Maven
 
-Add the JitPack repository to your `pom.xml`:
-
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
-
-Then add the dependency:
+Add the dependency to your `pom.xml`:
 
 ```xml
 <dependency>
-    <groupId>com.github.szabogabriel</groupId>
+    <groupId>info.gabrielszabo</groupId>
     <artifactId>jMustache</artifactId>
-    <version>v0.1.0</version>
+    <version>0.1.0</version>
 </dependency>
 ```
 
-**Note:** Replace `v0.1.0` with the latest release version from [Releases](https://github.com/szabogabriel/jMustache/releases).
-
-### Using Gradle
-
-```gradle
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    implementation 'com.github.szabogabriel:jMustache:v0.1.0'
-}
-```
+**Note:** You'll need to configure the repository where this artifact is hosted.
 
 ### Download JAR Directly
 
-You can also download the JAR file directly from the [Releases page](https://github.com/szabogabriel/jMustache/releases).
+You can download the JAR file directly from the releases.
 
 ## Functionality
 

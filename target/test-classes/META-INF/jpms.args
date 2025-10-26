@@ -1,4 +1,0 @@
---patch-module
-com.github.szabogabriel.jmustache=_
---add-reads
-com.github.szabogabriel.jmustache=ALL-UNNAMED

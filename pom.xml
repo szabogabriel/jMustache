@@ -2,19 +2,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.szabogabriel</groupId>
+	<groupId>info.gabrielszabo</groupId>
 	<artifactId>jMustache</artifactId>
 	<version>0.1.0</version>
 	<name>jMustache</name>
 	<description>A Java templating library</description>
 
-	<url>https://github.com/szabogabriel/jMustache</url>
-
-	<scm>
-		<connection>scm:git:git://github.com/szabogabriel/jMustache.git</connection>
-		<developerConnection>scm:git:ssh://github.com/szabogabriel/jMustache.git</developerConnection>
-		<url>https://github.com/szabogabriel/jMustache</url>
-	</scm>
+	<url>https://gabrielszabo.info</url>
 
 	<dependencies>
 		<dependency>
