@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.szabogabriel</groupId>
 	<artifactId>jMustache</artifactId>
-	<version>0.0.1</version>
+	<version>0.1.0</version>
 	<name>jMustache</name>
 	<description>A Java templating library</description>
 
