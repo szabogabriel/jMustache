@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>info.gabrielszabo</groupId>
-	<artifactId>jMustache</artifactId>
+	<artifactId>jmustache</artifactId>
 	<version>0.1.0</version>
-	<name>jMustache</name>
+	<name>jmustache</name>
 	<description>A Java templating library</description>
 
 	<url>https://gabrielszabo.info</url>
