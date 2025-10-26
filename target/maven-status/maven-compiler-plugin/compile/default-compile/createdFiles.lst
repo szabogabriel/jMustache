@@ -1,0 +1,12 @@
+com/jmtemplate/content/DynamicValueContent.class
+module-info.class
+com/jmtemplate/content/RootContent.class
+com/jmtemplate/Template$TemplateTimestampStructure.class
+com/jmtemplate/content/RecoursiveDynamicValueContent.class
+com/jmtemplate/content/DynamicConditionalContent.class
+com/jmtemplate/Tools.class
+com/jmtemplate/content/Content.class
+com/jmtemplate/Template.class
+com/jmtemplate/content/StaticContent.class
+com/jmtemplate/TemplateCallback.class
+com/jmtemplate/TemplateHolder.class

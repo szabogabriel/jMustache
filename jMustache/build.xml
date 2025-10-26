@@ -1,9 +1,0 @@
-<project name="jMustache" basedir="." default="start">
-	
-	<import file="../jMustacheBuild/build_generic.xml" />
-	
-	<target name="start">
-		<ant antfile="../jMustacheBuild/dependencies.xml" target="jMustache" inheritall="false"/>
-	</target>
-	
-</project>
