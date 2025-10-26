@@ -8,6 +8,14 @@
 	<name>jMustache</name>
 	<description>A Java templating library</description>
 
+	<url>https://github.com/szabogabriel/jMustache</url>
+
+	<scm>
+		<connection>scm:git:git://github.com/szabogabriel/jMustache.git</connection>
+		<developerConnection>scm:git:ssh://github.com/szabogabriel/jMustache.git</developerConnection>
+		<url>https://github.com/szabogabriel/jMustache</url>
+	</scm>
+
 	<distributionManagement>
 		<repository>
 			<id>github</id>
