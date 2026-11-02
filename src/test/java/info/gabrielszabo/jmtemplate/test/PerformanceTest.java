@@ -14,18 +14,19 @@ import info.gabrielszabo.jmtemplate.Template;
 public class PerformanceTest {
 	
 	private static final Map<String, Object> data = new HashMap<>();
+	private static final Map<String, Object> tweet = new HashMap<>();
 	
 	static {
-		data.put("possibly_sensitive", Boolean.FALSE);
-		data.put("truncated", Boolean.FALSE);
-		data.put("id_str", "114176016611684353");
-		data.put("retweet_count", "0");
-		data.put("favorited", Boolean.FALSE);
-		data.put("source", "<a href=\\\"http:\\/\\/twitter.com\\\" rel=\\\"nofollow\\\">Twitter for  iPhone<\\/a>");
-		data.put("retweeted", Boolean.FALSE);
-		data.put("id", "1.1417601661168e+17");
-		data.put("text", "LOOK AT WHAT ARRIVED. http:\\/\\/t.co\\/wJxLOTOR");
-		data.put("created_at", "Thu Sep 15 03:17:38 +0000 2011");
+		tweet.put("possibly_sensitive", Boolean.FALSE);
+		tweet.put("truncated", Boolean.FALSE);
+		tweet.put("id_str", "114176016611684353");
+		tweet.put("retweet_count", "0");
+		tweet.put("favorited", Boolean.FALSE);
+		tweet.put("source", "<a href=\\\"http:\\/\\/twitter.com\\\" rel=\\\"nofollow\\\">Twitter for  iPhone<\\/a>");
+		tweet.put("retweeted", Boolean.FALSE);
+		tweet.put("id", "1.1417601661168e+17");
+		tweet.put("text", "LOOK AT WHAT ARRIVED. http:\\/\\/t.co\\/wJxLOTOR");
+		tweet.put("created_at", "Thu Sep 15 03:17:38 +0000 2011");
 		
 		Map<String, Object> user = new HashMap<>();
 		user.put("statuses_count", "5327");
@@ -71,8 +72,8 @@ public class PerformanceTest {
 		indices.add(Integer.valueOf(19));
 		userMention.put("indices", indices);
 		userMentions.add(userMention);
-		userMention.clear();
-		indices.clear();
+		userMention = new HashMap<>();
+		indices = new ArrayList<>();
 		userMention.put("name", "Twitter");
 		userMention.put("id_str", "783214");
 		userMention.put("id", "783214");
@@ -80,6 +81,7 @@ public class PerformanceTest {
 		indices.add(Integer.valueOf(33));
 		indices.add(Integer.valueOf(41));
 		userMention.put("indices", indices);
+		userMentions.add(userMention);
 		entities.put("user_mentions", userMentions);
 		user.put("entities", entities);
 		user.put("lang", "en");
@@ -90,9 +92,9 @@ public class PerformanceTest {
 		user.put("id", "31393");
 		user.put("created_at", "Wed Nov 29 22:40:31 +0000 2006");
 		user.put("screen_name", "richardhenry");
-		data.put("user", user);
+		tweet.put("user", user);
 
-		entities.clear();
+		entities = new HashMap<>();
 		entities.put("urls", new ArrayList<Object>());
 		entities.put("hashtags", new ArrayList<Object>());
 		entities.put("user_mentions", new ArrayList<>());
@@ -113,25 +115,32 @@ public class PerformanceTest {
 		size.put("w", Integer.valueOf(340));
 		size.put("resize", "fit");
 		sizes.put("small", size);
-		size.clear();
+		size = new HashMap<>();
 		size.put("h", Integer.valueOf(765));
 		size.put("w", Integer.valueOf(1024));
 		size.put("resize", "fit");
 		sizes.put("large", size);
-		size.clear();
+		size = new HashMap<>();
 		size.put("h", Integer.valueOf(150));
 		size.put("w", Integer.valueOf(150));
 		size.put("resize", "crop");
 		sizes.put("thumb", size);
-		size.clear();
+		size = new HashMap<>();
 		size.put("h", Integer.valueOf(448));
 		size.put("w", Integer.valueOf(600));
 		size.put("resize", "fit");
 		sizes.put("medium", size);
-		size.clear();
 		mediaContent.put("sizes", sizes);
 		
-		entities.put("media", mediaContent);
+		media.add(mediaContent);
+		entities.put("media", media);
+		tweet.put("entities", entities);
+
+		List<Object> tweets = new ArrayList<>();
+		for (int i = 0; i < 5; i++) {
+			tweets.add(tweet);
+		}
+		data.put("tweets", tweets);
 	}
 
 	@Test
