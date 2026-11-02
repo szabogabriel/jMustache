@@ -19,9 +19,21 @@ public class DynamicValueContent extends Content {
 	public String generateContent(Map<String, Object> values) {
 		String ret = values.containsKey(KEY) ? values.get(KEY).toString() : "";
 		if (rewrite) {
-			ret = ret.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+			ret = escapeHtml(ret);
 		}
 		return ret;
+	}
+
+	private String escapeHtml(String input) {
+		StringBuilder ret = new StringBuilder();
+		for (char c : input.toCharArray()) {
+			switch (c) {
+				case '<': ret.append("&lt;"); break;
+				case '>': ret.append("&gt;"); break;
+				default: ret.append(c); break;
+			}
+		}
+		return ret.toString();
 	}
 
 }
