@@ -34,4 +34,4 @@ Additionally, embedded keys in dynamic values are supported. E.g. `{{key.{{discr
 
 ## Performance
 
-It renders the timeline.mustache (which is an example taken from https://github.com/spullara/mustache.java) around 145.000 times per second (which is about 29x faster, than the other implementation).
+It renders the timeline.mustache (which is an example taken from https://github.com/spullara/mustache.java) around 73.000 times per second on a Lenovo P15.
