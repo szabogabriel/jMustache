@@ -168,8 +168,21 @@ public abstract class Content {
 		}
 		Content toAdd = handleLeftoverStaticContent(sb.toString());
 		if (toAdd != null) ret.add(toAdd);
-		sb = new StringBuilder();
 		return ret;
+	}
+
+	protected String escapeHtml(String input) {
+		StringBuilder ret = new StringBuilder(input.length());
+		char c;
+		for (int i = 0; i < input.length(); i++) {
+			c = input.charAt(i);
+			switch (c) {
+				case '<': ret.append("&lt;"); break;
+				case '>': ret.append("&gt;"); break;
+				default: ret.append(c); break;
+			}
+		}
+		return ret.toString();
 	}
 	
 }

@@ -20,7 +20,7 @@ public class RecoursiveDynamicValueContent extends Content {
 		String key = generateKey(values);
 		String ret = values.containsKey(key) ? values.get(key).toString() : "";
 		if (rewrite) {
-			ret = ret.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+			ret = escapeHtml(ret);
 		}
 		return ret;
 	}
