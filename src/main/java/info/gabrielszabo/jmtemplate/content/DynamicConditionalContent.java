@@ -43,12 +43,11 @@ public class DynamicConditionalContent extends Content {
 		if (values.containsKey(KEY)) { 
 			Object k = values.get(KEY);
 			if (k instanceof List) {
-				// Map<String, Object> swp = new HashMap<String, Object>();
 				List<Map<String, Object>> valuesList = (List<Map<String, Object>>)k;
 				for (Map<String, Object> it : valuesList) {
+					MapResolver<String, Object> resolver = new MapResolver<>(it, values);
 					for (Content it2 : CONTENTS) {
-						MapResolver<String, Object> swp = new MapResolver<>(it, values);
-						sb.append(it2.generateContent(swp));
+						sb.append(it2.generateContent(resolver));
 					}
 				}
 			} else 
