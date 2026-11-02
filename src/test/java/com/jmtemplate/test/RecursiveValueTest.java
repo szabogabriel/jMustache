@@ -20,7 +20,7 @@ public class RecursiveValueTest {
 		data.put("_en.name.postfix", "yes, it works.");
 		data.put("_en.age.postfix", "55.");
 		
-		Template t = new Template(new File("./test"), "test9.template");
+		Template t = new Template(new File("./src/test/resources/"), "test9.template");
 		String expected = "* yes, it works.\n* 55.";
 		
 		String ret = t.render(data);

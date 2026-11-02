@@ -24,7 +24,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "* Chris\n* \n* &lt;b&gt;GitHub&lt;/b&gt;\n* <b>GitHub</b>";
 		
-		final Template t = new Template(new File("./test/"), "test1.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test1.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -42,7 +42,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "Shown.\n\n  Never shown!\n";
 		
-		final Template t = new Template(new File("./test/"), "test2.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test2.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -60,7 +60,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "Shown.\n";
 		
-		final Template t = new Template(new File("./test/"), "test2.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test2.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -91,7 +91,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "\n  <b>resque</b>\n  <b>hub</b>\n  <b>rip</b>";
 		
-		final Template t = new Template(new File("./test/"), "test3.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test3.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -112,7 +112,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "\n  Hi Jon!\n";
 		
-		final Template t = new Template(new File("./test/"), "test4.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test4.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -131,7 +131,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "No repoa\nNo repob\nNo repoc";
 		
-		final Template t = new Template(new File("./test/"), "test5.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test5.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -147,7 +147,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "<h1>Today.</h1>";
 		
-		final Template t = new Template(new File("./test/"), "test6.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test6.template");
 		final String rendered = t.render(null);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -169,7 +169,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "<h2>Names</h2>\n<strong>theName</strong>";
 		
-		final Template t = new Template(new File("./test/"), "test7a.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test7a.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);
@@ -224,7 +224,7 @@ public class AcceptanceTest {
 		
 		final String toAchieve = "Hello, World";
 		
-		final Template t = new Template(new File("./test/"), "test8.template");
+		final Template t = new Template(new File("./src/test/resources/"), "test8.template");
 		final String rendered = t.render(map);
 		
 		System.out.println("To achieve:\n" + toAchieve);

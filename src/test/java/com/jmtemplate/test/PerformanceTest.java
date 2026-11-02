@@ -137,7 +137,7 @@ public class PerformanceTest {
 	@Test
 	public void testSectionFalse() {
 		
-		final Template t = new Template(new File("./test/"), "timeline.mustache");
+		final Template t = new Template(new File("./src/test/resources/"), "timeline.mustache");
 		
 		long start = System.currentTimeMillis();
 		for (int i = 0; i < 1000000; i++) {
