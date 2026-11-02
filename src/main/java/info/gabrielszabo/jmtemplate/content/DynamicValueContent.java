@@ -17,7 +17,7 @@ public class DynamicValueContent extends Content {
 
 	@Override
 	public String generateContent(Map<String, Object> values) {
-		String ret = values.containsKey(KEY) ? values.get(KEY).toString() : "";
+		String ret = values.getOrDefault(KEY, "").toString();
 		if (rewrite) {
 			ret = escapeHtml(ret);
 		}
