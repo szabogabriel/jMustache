@@ -47,13 +47,13 @@ public class DynamicConditionalContent extends Content {
 				List<Map<String, Object>> valuesList = (List<Map<String, Object>>)k;
 				for (Map<String, Object> it : valuesList) {
 					for (Content it2 : CONTENTS) {
-						MapResolver<String, Object> swp = new MapResolver<>(values, it);
+						MapResolver<String, Object> swp = new MapResolver<>(it, values);
 						sb.append(it2.generateContent(swp));
 					}
 				}
 			} else 
 			if (k instanceof Map) {
-				MapResolver<String, Object> resolver = new MapResolver<>(values, (Map<String, Object>)k);
+				MapResolver<String, Object> resolver = new MapResolver<>((Map<String, Object>)k, values);
 				for (Content it : CONTENTS) {
 					sb.append(it.generateContent(resolver));
 				}

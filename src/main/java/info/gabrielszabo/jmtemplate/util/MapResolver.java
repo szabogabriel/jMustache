@@ -39,7 +39,11 @@ public class MapResolver<K, V> implements Map<K, V> {
 
     @Override
     public V get(Object key) {
-        return mapPrimary.getOrDefault(key, mapSecondary.get(key));
+        V ret = mapPrimary.get(key);
+        if (ret == null) {
+            ret = mapSecondary.get(key);
+        }
+        return ret;
     }
 
     @Override
