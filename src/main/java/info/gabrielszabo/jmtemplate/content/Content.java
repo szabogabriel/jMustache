@@ -1,12 +1,12 @@
-package com.jmtemplate.content;
+package info.gabrielszabo.jmtemplate.content;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.jmtemplate.TemplateHolder;
-import com.jmtemplate.Tools;
+import info.gabrielszabo.jmtemplate.TemplateHolder;
+import info.gabrielszabo.jmtemplate.Tools;
 
 public abstract class Content {
 	

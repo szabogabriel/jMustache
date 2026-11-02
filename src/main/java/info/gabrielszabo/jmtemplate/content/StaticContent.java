@@ -1,8 +1,8 @@
-package com.jmtemplate.content;
+package info.gabrielszabo.jmtemplate.content;
 
 import java.util.Map;
 
-import com.jmtemplate.TemplateHolder;
+import info.gabrielszabo.jmtemplate.TemplateHolder;
 
 public class StaticContent extends Content{
 	

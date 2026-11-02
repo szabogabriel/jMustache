@@ -1,4 +1,4 @@
-package com.jmtemplate;
+package info.gabrielszabo.jmtemplate;
 
 import java.io.BufferedInputStream;
 import java.io.File;

@@ -1,9 +1,9 @@
-package com.jmtemplate.content;
+package info.gabrielszabo.jmtemplate.content;
 
 import java.util.List;
 import java.util.Map;
 
-import com.jmtemplate.TemplateHolder;
+import info.gabrielszabo.jmtemplate.TemplateHolder;
 
 public class RootContent extends Content {
 	

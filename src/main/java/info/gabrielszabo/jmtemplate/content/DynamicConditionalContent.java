@@ -1,12 +1,12 @@
-package com.jmtemplate.content;
+package info.gabrielszabo.jmtemplate.content;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.jmtemplate.TemplateCallback;
-import com.jmtemplate.TemplateHolder;
+import info.gabrielszabo.jmtemplate.TemplateCallback;
+import info.gabrielszabo.jmtemplate.TemplateHolder;
 
 public class DynamicConditionalContent extends Content {
 	

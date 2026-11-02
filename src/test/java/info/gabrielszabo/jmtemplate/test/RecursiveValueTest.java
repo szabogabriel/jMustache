@@ -1,14 +1,13 @@
-package com.jmtemplate.test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package info.gabrielszabo.jmtemplate.test;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import com.jmtemplate.Template;
+import info.gabrielszabo.jmtemplate.Template;
 
 public class RecursiveValueTest {
 	

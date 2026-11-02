@@ -1,4 +1,4 @@
-package com.jmtemplate.test;
+package info.gabrielszabo.jmtemplate.test;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
-import com.jmtemplate.Template;
+import info.gabrielszabo.jmtemplate.Template;
 
 public class PerformanceTest {
 	

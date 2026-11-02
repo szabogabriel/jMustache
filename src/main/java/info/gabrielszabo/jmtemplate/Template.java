@@ -1,4 +1,4 @@
-package com.jmtemplate;
+package info.gabrielszabo.jmtemplate;
 
 import java.io.File;
 import java.net.URL;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.jmtemplate.content.RootContent;
+import info.gabrielszabo.jmtemplate.content.RootContent;
 
 public class Template implements TemplateHolder {
 	

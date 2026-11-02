@@ -1,6 +1,4 @@
-package com.jmtemplate.test;
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+package info.gabrielszabo.jmtemplate.test;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,10 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import org.junit.jupiter.api.Test;
 
-import com.jmtemplate.Template;
-import com.jmtemplate.TemplateCallback;
+import info.gabrielszabo.jmtemplate.Template;
+import info.gabrielszabo.jmtemplate.TemplateCallback;
 
 public class AcceptanceTest {
 	
