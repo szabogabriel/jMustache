@@ -1,12 +1,12 @@
 package info.gabrielszabo.jmtemplate.content;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import info.gabrielszabo.jmtemplate.TemplateCallback;
 import info.gabrielszabo.jmtemplate.TemplateHolder;
+import info.gabrielszabo.jmtemplate.util.MapResolver;
 
 public class DynamicConditionalContent extends Content {
 	
@@ -43,22 +43,19 @@ public class DynamicConditionalContent extends Content {
 		if (values.containsKey(KEY)) { 
 			Object k = values.get(KEY);
 			if (k instanceof List) {
-				Map<String, Object> swp = new HashMap<String, Object>();
+				// Map<String, Object> swp = new HashMap<String, Object>();
 				List<Map<String, Object>> valuesList = (List<Map<String, Object>>)k;
 				for (Map<String, Object> it : valuesList) {
 					for (Content it2 : CONTENTS) {
-						swp.putAll(values);
-						swp.putAll(it);
+						MapResolver<String, Object> swp = new MapResolver<>(values, it);
 						sb.append(it2.generateContent(swp));
-						swp.clear();
 					}
 				}
 			} else 
 			if (k instanceof Map) {
-				Map<String, Object> swp = (Map<String, Object>)k;
-				swp.putAll(values);
+				MapResolver<String, Object> resolver = new MapResolver<>(values, (Map<String, Object>)k);
 				for (Content it : CONTENTS) {
-					sb.append(it.generateContent(swp));
+					sb.append(it.generateContent(resolver));
 				}
 			} else
 			if (k instanceof TemplateCallback) {
@@ -70,7 +67,7 @@ public class DynamicConditionalContent extends Content {
 				final String [] lineBreak = line.split("\\s+");
 				sb.append(((TemplateCallback) k).run(Arrays.asList(lineBreak)));
 			} else {
-				if (k instanceof Boolean && ((Boolean)k).booleanValue()) {
+				if (k instanceof Boolean && ((Boolean)k)) {
 					for (Content it : CONTENTS) {
 						sb.append(it.generateContent(values));
 					}
