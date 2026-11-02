@@ -1,19 +1,18 @@
 package info.gabrielszabo.jmtemplate.content;
 
-import java.util.List;
 import java.util.Map;
 
 import info.gabrielszabo.jmtemplate.TemplateHolder;
 
 public class RecoursiveDynamicValueContent extends Content {
 
-	private final List<Content> CONTENTS;
+	private final Content[] CONTENTS;
 	private final boolean rewrite;
 	
 	public RecoursiveDynamicValueContent(String content, boolean rewrite, TemplateHolder templateHolder) {
 		super(templateHolder);
 		this.rewrite = rewrite;
-		this.CONTENTS = compile(content);
+		this.CONTENTS = compile(content).toArray(Content[]::new);
 	}
 
 	@Override

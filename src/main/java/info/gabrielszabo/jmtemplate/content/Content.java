@@ -138,7 +138,7 @@ public abstract class Content {
 	}
 	
 	private List<Content> compile() {
-		List<Content> ret = new ArrayList<Content>(); 
+		List<Content> ret = new ArrayList<>(); 
 		i = 0;
 		StringBuilder sb = new StringBuilder();
 		while (isNext()) {

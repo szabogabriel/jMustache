@@ -11,7 +11,7 @@ import info.gabrielszabo.jmtemplate.TemplateHolder;
 public class DynamicConditionalContent extends Content {
 	
 	private final String KEY;
-	private final List<Content> CONTENTS;
+	private final Content[] CONTENTS;
 	private final boolean EMPTY; 
 	
 	public DynamicConditionalContent(String key, String content, TemplateHolder templateHolder) {
@@ -22,7 +22,7 @@ public class DynamicConditionalContent extends Content {
 		super(templateHolder);
 		this.EMPTY = empty;
 		this.KEY = key;
-		this.CONTENTS = compile(content);
+		this.CONTENTS = compile(content).toArray(Content[]::new);
 	}
 	
 	@Override

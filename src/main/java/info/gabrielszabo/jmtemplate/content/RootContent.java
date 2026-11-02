@@ -1,17 +1,16 @@
 package info.gabrielszabo.jmtemplate.content;
 
-import java.util.List;
 import java.util.Map;
 
 import info.gabrielszabo.jmtemplate.TemplateHolder;
 
 public class RootContent extends Content {
 	
-	private final List<Content> CONTENTS;
+	private final Content[] CONTENTS;
 	
 	public RootContent(String content, TemplateHolder templateHolder) {
 		super(templateHolder);
-		this.CONTENTS = compile(content);
+		this.CONTENTS = compile(content).toArray(Content[]::new);
 	}
 	
 	@Override
