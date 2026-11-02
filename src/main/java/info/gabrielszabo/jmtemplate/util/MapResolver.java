@@ -6,14 +6,32 @@ import java.util.Set;
 
 public class MapResolver<K, V> implements Map<K, V> {
 
-    private final java.util.Map<K, V> mapPrimary;
-    private final java.util.Map<K, V> mapSecondary;
+    private java.util.Map<K, V> mapPrimary;
+    private java.util.Map<K, V> mapSecondary;
+
+    public MapResolver() {
+
+    }
 
     public MapResolver(java.util.Map<K, V> mapPrimary, java.util.Map<K, V> mapSecondary) {
         if (mapPrimary == null || mapSecondary == null) {
             throw new IllegalArgumentException("Both mapPrimary and mapSecondary must be non-null");
         }
         this.mapPrimary = mapPrimary;
+        this.mapSecondary = mapSecondary;
+    }
+
+    public void setPrimaryMap(java.util.Map<K, V> mapPrimary) {
+        if (mapPrimary == null) {
+            throw new IllegalArgumentException("mapPrimary must be non-null");
+        }
+        this.mapPrimary = mapPrimary;
+    }
+
+    public void setSecondaryMap(java.util.Map<K, V> mapSecondary) {
+        if (mapSecondary == null) {
+            throw new IllegalArgumentException("mapSecondary must be non-null");
+        }
         this.mapSecondary = mapSecondary;
     }
 

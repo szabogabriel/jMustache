@@ -27,8 +27,10 @@ public class DynamicConditionalContent extends Content {
 	
 	@Override
 	public String generateContent(Map<String, Object> values) {
-		String ret = "";
-		if (values.containsKey(KEY) || EMPTY) {
+		String ret;
+		if (EMPTY) {
+			ret = handleEmpty(values);
+		} else {
 			ret = handle(values);
 		}
 		return ret;
@@ -37,15 +39,15 @@ public class DynamicConditionalContent extends Content {
 	@SuppressWarnings("unchecked")
 	private String handle(Map<String, Object> values) {
 		StringBuilder sb = new StringBuilder();
-		if (EMPTY) {
-			sb.append(handleEmpty(values));
-		} else
 		if (values.containsKey(KEY)) { 
 			Object k = values.get(KEY);
 			if (k instanceof List) {
 				List<Map<String, Object>> valuesList = (List<Map<String, Object>>)k;
+				MapResolver<String, Object> resolver = new MapResolver();
+				resolver.setSecondaryMap(values);
 				for (Map<String, Object> it : valuesList) {
-					MapResolver<String, Object> resolver = new MapResolver<>(it, values);
+					// MapResolver<String, Object> resolver = new MapResolver<>(it, values);
+					resolver.setPrimaryMap(it);
 					for (Content it2 : CONTENTS) {
 						sb.append(it2.generateContent(resolver));
 					}

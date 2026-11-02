@@ -18,7 +18,7 @@ public class RecoursiveDynamicValueContent extends Content {
 	@Override
 	public String generateContent(Map<String, Object> values) {
 		String key = generateKey(values);
-		String ret = values.containsKey(key) ? values.get(key).toString() : "";
+		String ret = values.getOrDefault(key, "").toString();
 		if (rewrite) {
 			ret = escapeHtml(ret);
 		}
